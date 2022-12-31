@@ -1,0 +1,23 @@
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px double var(--selected-theme-main-color);
+
+    h2{
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: capitalize;
+        color: var(--selected-theme-main-color);
+    }
+
+    span{
+        svg{
+            color: var(--selected-theme-main-color);
+        }
+    }
+}

@@ -1,0 +1,113 @@
+.navbar{
+    // height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background-color: var(--selected-theme-nav-background-color);
+
+    // target child
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        // height: 80px;
+        padding: 12px 10px;
+        position: relative;
+
+        &__logo{
+            color: var(--selected-theme-main-color);
+            cursor: pointer;
+            font-size: 2rem;
+            flex-grow: 0.2;
+        }
+
+        &__menu{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 40%;
+            flex-grow: 0.3;
+
+            &__item{
+                line-height: 20px;
+                font-size: 1.4rem;
+                cursor: pointer;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    height: 2px;
+                    width: 0px;
+                    background: transparent;
+                    transition: width 0.25s ease-in-out;
+                }
+
+                &:hover::after{
+                    width: 90%;
+                    background: var(--selected-theme-main-color);
+                }
+
+                &:hover>a{
+                    color: var(--selected-theme-main-color);
+                }
+
+                &__links{
+                    color: #fff;
+                    transition: color 0.2s ease-in-out;
+
+                    &:hover{
+                        color: var(--selected-theme-main-color);
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media(min-width: 769px){
+    .nav-icon{
+        display: none;
+    }
+}
+
+@media(max-width: 769px){
+    .navbar__container__menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 99.5%;
+        position: absolute;
+        top: 59.6px;
+        left: -100%;
+        opacity: 1;
+        overflow: hidden!important;
+        transition: all 0.25s ease-in-out;
+
+
+        &.active{
+            background: #181818;
+            left: 0px;
+            opacity: 1;
+            z-index: 1;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    .navbar__container__menu__item{
+        width: 50%;
+        padding: 10px 0;
+        border-bottom: 1px solid #282828;
+    }
+
+}
+
+.nav-icon{
+    flex-grow: 0.2;
+    cursor: pointer;
+    color: var(--selected-theme-main-color);
+}
